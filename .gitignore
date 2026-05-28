@@ -8,6 +8,7 @@ env/
 venv/
 .venv/
 .Python
+plan.md
 
 # Distribution / packaging
 .Python
