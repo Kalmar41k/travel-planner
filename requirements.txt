@@ -1,0 +1,5 @@
+fastapi==0.101.1
+uvicorn[standard]==0.22.0
+sqlmodel==0.0.8
+httpx==0.24.1
+python-dotenv==1.0.0

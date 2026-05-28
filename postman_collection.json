@@ -1,0 +1,112 @@
+{
+    "info": {
+        "name": "Travel Planner API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Place",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"external_id\": 27992\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/places/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "places",
+                        ""
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Project with Place IDs",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"My Trip\",\n  \"description\": \"Short trip\",\n  \"places\": [{ \"place_id\": 1 }, { \"place_id\": 2 }]\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/projects/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "projects",
+                        ""
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Add Multiple Places to Project",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"place_ids\": [3, 4]\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/projects/1/places",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "projects",
+                        "1",
+                        "places"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "List Project Places",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/projects/1/places",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "projects",
+                        "1",
+                        "places"
+                    ]
+                }
+            }
+        }
+    ]
+}
